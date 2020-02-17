@@ -1,9 +1,10 @@
 import pandas as pd
 import numpy as np
+sat_scores=pd.read_csv("SAT.txt", sep='\t', dtype={0:'str', 1:'str', 2:'str'})
 
-sat_scores=pd.read_csv("C:\\Users\\julie.norris\\Documents\\Python_Scripts\\GreatSchools\\SAT.txt", sep=r'\t', engine='python')
 df=pd.DataFrame(sat_scores)
 
+"""
 def missing_Data():
 	print("MISSING DISTRICT CODE:")
 	print ( df.query('DIST_CODE != DIST_CODE'))
@@ -19,13 +20,14 @@ def missing_Data():
 	print((df.loc[df['WRITING'] > 800]) | (df.loc[df['WRITING'] < 200]))
 	
 missing_Data()
-
+"""
 
 def convert_long_to_wide():
-	df['ID']=df['ï»¿CO_CODE'].astype(str)+df['DIST_CODE'].astype(str)+df['SCH_CODE'].astype(str)
-	print(df)
-	#new_table=pd.melt(df, id_vars['ID'], value_vars=['TOTAL'],var_name='DATE_TYPE') #,['MATHEMATICS'],['CRITICAL_READING'],['WRITING'],['SAT_1550'], 
-	#print(new_table)
-	#return(new_table)
+	df['DIST_CODE'] = df.DIST_CODE.fillna('')
+	df['ID']=df['CO_CODE']+df['DIST_CODE']+df['SCH_CODE']
+	
+	new_table=pd.melt(df, id_vars['ID'], value_vars=['TOTAL'],var_name='DATE_TYPE') #,['MATHEMATICS'],['CRITICAL_READING'],['WRITING'],['SAT_1550'], 
+	print(new_table)
+	return(new_table)
 
 convert_long_to_wide()
