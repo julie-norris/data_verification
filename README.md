@@ -1,3 +1,8 @@
+Take home challenge - 
+
+The file will run from the command line (python take_home.py). The python file and two txt files should all be saved in the dame directory. The results will be printed in the terminal. 
+
+
 **Data Quality Assurance**
 
 Please describe your findings, process, and include
