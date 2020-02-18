@@ -34,7 +34,7 @@ The first two parts of this section were fairly straightforward and I added docu
 
 3. Calculate the percentage of students taking the SAT at each school. Store that value in a separate column, PERC_TAKING_SAT, noting any irregularities in the result.
 
-The irregularities are that many of the results showed schools where greater than 100% were taking the SAT. When I joined the two files it was concerning that there was no primary key on which to join them so there is no way to know for sure that the schools in the SAT file are matching their state_id and enrollment numbers on the Enrollment file.  This may be the cause of the irregularities. 
+The irregularities are that many of the results showed schools where greater than 100% were taking the SAT. When I joined the two files it was concerning that there was no common foreign key on which to join them so there is no way to know for sure that the schools in the SAT file are matching their state_id and enrollment numbers on the Enrollment file.  This may be the cause of the irregularities. 
 
 
 4. Now reshape the SAT file from a wide format to a normalized (or long) structure with the following three columns: ID, DATA_TYPE, and VALUE.
